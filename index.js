@@ -1,11 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const app = express();
+const { langConverter, storeFile } = require("./controllers");
 
-//Load HTTP module
-const http = require("http");
-const hostname = '127.0.0.1';
+const app = express();
 const port = 5000;
 
 app.use(express.urlencoded({ extended: true }));
@@ -14,6 +12,14 @@ app.use(express.json());
 app.use(cors());
 
 const url = "mongodb+srv://buddy123:buddy123@cluster0.b7pep.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+
+// user routes
+app.get("/langconvert", langConverter);
+app.get("/export", storeFile);
+
+
+
 
 
 app.listen(port, () => {

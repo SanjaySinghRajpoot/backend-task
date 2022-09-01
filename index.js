@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const { langConverter, storeFile } = require("./controllers");
+const { langConverter, storeFile } = require("./controllers.js");
+const user = require("./routes/user.js");
 
 const app = express();
 const port = 5000;
@@ -17,7 +18,7 @@ const url = "mongodb+srv://buddy123:buddy123@cluster0.b7pep.mongodb.net/myFirstD
 // user routes
 app.get("/langconvert", langConverter);
 app.get("/export", storeFile);
-
+app.get("/user", user);
 
 
 

@@ -45,3 +45,20 @@ export const storeFile = async (req, res, next) => {
     }
   }
 
+//Task Number 4
+//A recent client partner wanted us to send an SMS to the customer whose details are collected in the response as soon as the ingestion was complete reliably. The content of the SMS consists of details of the customer, which were a part of the answers in the response. This customer was supposed to use this as a “receipt” for them having participated in the exercise.
+export const sendSms = async(req, res) => {
+    const { email, name, income, savings, mobile } = req.body;
+    var client = new twilio(
+      "AC52afef0b9a5fcfcac44e96a32a48fe2b",
+      "98c9d76a07349e3d3fab1aae5a99baf0"
+    );
+    client.messages
+      .create({
+        to: mobile,
+        from: "+19993675309",
+        body: `Your Details :\n Email ID :${email}\n Name : ${name}\n Income Per Annum: ${income}\n Savings Per Annum: ${savings}\n Contact : ${mobile}\n Thankyou for your response`,
+      })
+      .then(res.send("Message success"))
+      .catch((err) => res.send(err));
+  }

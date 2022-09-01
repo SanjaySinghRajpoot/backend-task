@@ -19,3 +19,29 @@ export const langConverter = async (req, res) => {
     res.send(err.message);
   }
 };
+
+export const storeFile = async (req, res, next) => {
+    try {
+      var users = await User.find();
+      var createCsvWriter = csvWriter.createObjectCsvWriter;
+      const CSV = createCsvWriter({
+        path: "./DataStore/data.csv",
+        header: [
+          { id: "id", title: "ID" },
+          { id: "emailID", title: "EmailID" },
+          { id: "namePerson", title: "NamePerson" },
+          { id: "incomePerYear", title: "IncomePerYear" },
+          { id: "savings", title: "Saving Per Year" },
+          { id: "mobile", title: "Mobile Number" },
+        ],
+      });
+      await CSV.writeRecords(users).then(() =>
+        res.send(
+          "<a href='/DataStore/data.csv' download='data.csv' id='download-link'></a><script>document.getElementById('download-link').click();</script>"
+        )
+      );
+    } catch (err) {
+      res.send("Error " + err);
+    }
+  }
+

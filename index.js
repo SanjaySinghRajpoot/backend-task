@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const { langConverter, storeFile } = require("./controllers.js");
+const { langConverter, storeFile } = require("./controllers/index.js");
 const user = require("./routes/user.js");
 
 const app = express();

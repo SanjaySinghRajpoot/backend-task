@@ -1,0 +1,24 @@
+{
+  "name": "backend-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanjaySinghRajpoot/backend-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanjaySinghRajpoot/backend-task/issues"
+  },
+  "homepage": "https://github.com/SanjaySinghRajpoot/backend-task#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}

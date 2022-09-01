@@ -38,9 +38,9 @@ export const postdetails = async (req, res) => {
 
 export const updateDetails = async (req, res) => {
   try {
-    const alien = await Alien.findById(req.params.id);
-    alien.sub = req.body.sub;
-    const a1 = await alien.save();
+    const temp = await User.findById(req.params.id);
+    temp.sub = req.body.sub;
+    const a1 = await temp.save();
     res.json(a1);
   } catch (err) {
     res.send("Error");

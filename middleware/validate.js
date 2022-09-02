@@ -1,4 +1,4 @@
-// to validate the data enteted by the user
+// Middleware function - to validate the data entered by the user
 export const validateData = (req, res, next) => {
   const { income, savings, mobile } = req.body;
 

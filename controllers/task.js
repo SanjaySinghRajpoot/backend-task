@@ -59,6 +59,6 @@ export const sendSms = async(req, res) => {
         from: "+19993675309",
         body: `Your Details :\n Email ID :${email}\n Name : ${name}\n Income Per Annum: ${income}\n Savings Per Annum: ${savings}\n Contact : ${mobile}\n Thankyou for your response`,
       })
-      .then(res.send("Message success"))
+      .then(res.send("Message was sent successfully!!"))
       .catch((err) => res.send(err));
   }

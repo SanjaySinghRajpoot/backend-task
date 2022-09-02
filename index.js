@@ -3,9 +3,12 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { langConverter, storeFile } from "./controllers/task.js";
 import user from "./routes/user.js";
+import dotenv from 'dotenv';
+
 
 const app = express();
 const port = 5000;
+dotenv.config();
 
 app.use(express.urlencoded({ extended: true }));
 // app.use("/DataStore", express.static(__dirname + "/DataStore"));
@@ -14,18 +17,10 @@ app.use(cors());
 
 const url = "mongodb+srv://buddy123:buddy123@cluster0.b7pep.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-
-// user routes
+// routes
 app.get("/langconvert", langConverter);
 app.get("/export", storeFile);
 app.get("/user", user);
-
-
-
-
-app.listen(port, () => {
-    console.log(`Server is listening at port : ${port}`);
-  });
 
 
 // Connecting to Mongo DB Atlas

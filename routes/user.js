@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/fetch", getUser);
 router.get("/:id", getIdUser);
-router.post("/enterdetails", validateData, postdetails); // using middlware to verify data
+router.post("/enterdetails", validateData, postdetails); // using middleware to verify data
 router.patch("/:id", updateDetails);
 
 export default router;

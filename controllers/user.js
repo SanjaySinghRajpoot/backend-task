@@ -32,7 +32,7 @@ export const postdetails = async (req, res) => {
     const a1 = await temp.save();
     res.json(a1);
   } catch (err) {
-    res.send("Error");
+    res.send("Error" + err);
   }
 };
 
@@ -43,6 +43,6 @@ export const updateDetails = async (req, res) => {
     const a1 = await temp.save();
     res.json(a1);
   } catch (err) {
-    res.send("Error");
+    res.send("Error"+ err);
   }
 };

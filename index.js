@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 dotenv.config();
 
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-const url = "mongodb+srv://buddy123:buddy123@cluster0.b7pep.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 // routes
 app.get("/langconvert", langConverter);
@@ -24,6 +23,6 @@ app.get("/user", user);
 
 
 // Connecting to Mongo DB Atlas
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(port, () => console.log(`Server Running on Port: http://localhost:${port}`)))
   .catch((error) => console.log(`${error} did not connect`));

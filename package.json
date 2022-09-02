@@ -22,8 +22,10 @@
     "csv-writer": "^1.6.0",
     "express": "^4.18.1",
     "mongoose": "^6.5.4",
+    "nodemo": "^1.0.0",
     "nodemon": "^2.0.19",
     "translate": "^1.4.1",
     "twilio": "^3.81.0"
-  }
+  },
+  "type":"module"
 }

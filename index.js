@@ -1,14 +1,14 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-const { langConverter, storeFile } = require("./controllers/index.js");
-const user = require("./routes/user.js");
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import { langConverter, storeFile } from "./controllers/task.js";
+import user from "./routes/user.js";
 
 const app = express();
 const port = 5000;
 
 app.use(express.urlencoded({ extended: true }));
-app.use("/DataStore", express.static(__dirname + "/DataStore"));
+// app.use("/DataStore", express.static(__dirname + "/DataStore"));
 app.use(express.json());
 app.use(cors());
 

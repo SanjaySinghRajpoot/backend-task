@@ -1,9 +1,9 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const User = require("./models/user");
-const twilio = require("twilio");
-const csvWriter = require("csv-writer");
-const translate = require("translate");
+import express from "express";
+import mongoose from "mongoose";
+import User from "../models/user.js";
+import twilio from "twilio";
+import csvWriter from "csv-writer";
+import translate from "translate";
 
 const router = express.Router()
 

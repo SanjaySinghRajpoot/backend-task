@@ -1,7 +1,7 @@
-const express = require("express");
-const validateData = require("../middleware/validate.js");
+import express from "express";
+import { validateData } from "../middleware/validate.js";
 const router = express.Router();
-const { getUser, getIdUser, postdetails, updateDetails } = require("../controllers/user.js");
+import { getUser, getIdUser, postdetails, updateDetails } from "../controllers/user.js";
 
 router.get("/fetch", getUser);
 router.get("/:id", getIdUser);

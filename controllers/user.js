@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const User = require("../models/user.js");
+import User from "../models/user.js";
 
 export const getUser = async (req, res) => {
   try {
